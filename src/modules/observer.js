@@ -1,32 +1,32 @@
-  export class Subject {
-    constructor() {
-      this.observers = [];
-    }
-  
-    addObserver(observer) {
-      this.observers.push(observer);
-    }
-  
-    removeObserver(observer) {
-      const index = this.observers.indexOf(observer);
-      if (index !== -1) {
-        this.observers.splice(index, 1);
-      }
-    }
-  
-    notifyObservers(data) {
-      for (const observer of this.observers) {
-        observer.update(data);
-      }
+export class Subject {
+  constructor() {
+    this.observers = [];
+  }
+
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  removeObserver(observer) {
+    const index = this.observers.indexOf(observer);
+    if (index !== -1) {
+      this.observers.splice(index, 1);
     }
   }
 
-  export class Observer {
-    constructor(callback) {
-      this.callback = callback;
-    }
-  
-    update(data) {
-      this.callback(data);
+  notifyObservers(data) {
+    for (const observer of this.observers) {
+      observer.update(data);
     }
   }
+}
+
+export class Observer {
+  constructor(callback) {
+    this.callback = callback;
+  }
+
+  update(data) {
+    this.callback(data);
+  }
+}
