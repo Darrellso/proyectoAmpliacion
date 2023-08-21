@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultDiv = document.getElementById("result");
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Evitar el envío del formulario
 
+    // Obtener respuestas del formulario
     const light = document.querySelector('input[name="light"]:checked').value;
     const sunlight = document.querySelector(
       'input[name="sunlight"]:checked',
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll('input[name="elements"]:checked'),
     ).map((el) => el.value);
 
+    // Construir objeto de recomendación
     const recommendation = RecommendationBuilder.withLight(light)
       .withSunlight(sunlight)
       .withPets(pets)
@@ -29,14 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .withElements(elements)
       .build();
 
+    // Mostrar la ficha de planta en resultDiv
     resultDiv.innerHTML = "";
     const recommendationCard = recommendation.render();
     resultDiv.appendChild(recommendationCard);
 
+    // Agregar el botón "Customize"
     const customizeButton = document.createElement("button");
     customizeButton.textContent = "Customize";
     customizeButton.addEventListener("click", function () {
-      window.location.href = "customization.html"; 
+      window.location.href = "customization.html"; // Redirigir a la vista de personalización
     });
     resultDiv.appendChild(customizeButton);
   });
@@ -44,6 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const clearButton = document.getElementById("clear-button");
   clearButton.addEventListener("click", function () {
     form.reset();
-    resultDiv.innerHTML = "";
+    resultDiv.innerHTML = ""; // Limpiar resultados anteriores
   });
 });

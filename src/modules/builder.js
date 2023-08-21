@@ -169,6 +169,7 @@ export const RecommendationBuilder = {
         plantCard.classList.add("plant-card");
         plantCard.appendChild(imagesContainer);
 
+        // ... (código para agregar información adicional a la tarjeta)
         const additionalInfo = document.createElement("div");
         additionalInfo.classList.add("additional-info");
         additionalInfo.innerHTML = `

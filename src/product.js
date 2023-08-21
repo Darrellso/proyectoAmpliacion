@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
   
   
   if(storedOrder) {
+      // Imágenes
       document.getElementById("plant-image").src = `./Assets/plant-${storedOrder.plant}.png`;
       document.getElementById("pot-image").src = `./Assets/pots/${storedOrder.pot}.png`;
       document.getElementById("soil-image").src = `./Assets/soil-${storedOrder.soil}.png`;
       document.getElementById("extras-image").src = storedOrder.extras ? `./Assets/${storedOrder.extras}.png` : "";
 
+      // Información
       document.getElementById("plant-name").textContent = capitalize(storedOrder.plant);
       document.getElementById("soil-type").textContent = getSoilName(storedOrder.soil);
       document.getElementById("pot-description").textContent = getPotDescription(storedOrder.pot);
@@ -49,11 +51,13 @@ function displayPriceBreakdown(selection) {
   const breakdownDiv = document.getElementById("price-breakdown");
   const totalDiv = document.getElementById("total-price");
 
+  // Calcula el total y desglosa los precios
   const total = calculateTotalPrice(selection);
 
   let breakdownHtml = `<ul>`;
   breakdownHtml += `<li>Plant (${prices.plants[selection.plant]}): ${selection.plant}</li>`;
 
+  // Procesamiento similar para la maceta
   const potParts = selection.pot.split("-");
   const potDecoration = potParts[0];
   const potType = potParts[1];
@@ -82,16 +86,19 @@ function convertToApiFormat(selectionItem) {
   if (parts.length === 3) {
       return `${parts[1]}-${parts[0]}-${parts[2]}`;
   }
+  // Agrega lógica adicional aquí si hay más formatos
   return selectionItem;
 }
 
+// Llamar a la función cuando quieras mostrar el desglose
 async function getInventory(productType, itemId) {
   const url = `https://qfble0gquj.execute-api.us-east-2.amazonaws.com/plant-store/inventory/${productType}/${itemId}`;
   const response = await fetch(url);
   const data = await response.json();
-  return data.stock; 
+  return data.stock; // Asumiendo que la respuesta tiene una propiedad 'stock' con el inventario
 }
 
+// Función para verificar el inventario de todos los ítems en la selección del usuario
 async function checkInventory(selection) {
   const alertDiv = document.getElementById('inventory-alert-message');
   const potItemId = convertToApiFormat(selection.pot)
@@ -102,6 +109,7 @@ async function checkInventory(selection) {
   let outOfStock = false;
   let limitedStock = false;
 
+  // Verificar stock de planta
   const plantStock = await getInventory('plant', selection.plant);
   if (plantStock === 0) {
       alerts += `${capitalizeFirstLetter(selection.plant)} is out of stock. Please select a different plant.<br>`;
@@ -111,6 +119,7 @@ async function checkInventory(selection) {
       limitedStock = true;
   }
 
+  // Verificar stock de maceta
   const potStock = await getInventory('pot', potItemId);
   if (potStock === 0) {
       alerts += `${convertToReadableFormat(selection.pot)} is out of stock. Please select a different pot.<br>`
@@ -120,6 +129,7 @@ async function checkInventory(selection) {
       limitedStock = true;
   }
 
+  // Verificar stock de suelo (soil)
   const soilStock = await getInventory('soil', selection.soil);
   if (soilStock === 0) {
       alerts += `${capitalizeFirstLetter(selection.soil)} soil is out of stock. Please select a different soil.<br>`
@@ -206,6 +216,7 @@ async function displayPlantInfo(plantId) {
   
 }
 
+// Suponiendo que tienes un objeto `order` con los detalles de la orden del usuario, llamas a la función de la siguiente manera:
 
 displayPlantInfo(storedOrder.plant.replace(/-\s/g, ''));
 

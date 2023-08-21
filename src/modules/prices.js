@@ -28,4 +28,5 @@ export const prices = {
         'pebbles': 2.00,
         'mini-plants': 3.75
     }
-};
+  };
+  
