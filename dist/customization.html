@@ -1,0 +1,135 @@
+<!-- customization.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Customize Your Order</title>
+</head>
+<body>
+    <!-- Contenido de la vista de personalización -->
+    <h1>Customize Your Order</h1>
+    <form id="customization-form">
+        <label for="pot">Choose your pot:</label>
+        <div>
+            <input type="radio" id="pot-clay" name="pot" value="clay" required>
+            <label for="pot-clay">Clay</label>
+        </div>
+        <div>
+            <input type="radio" id="pot-ceramic" name="pot" value="ceramic" required>
+            <label for="pot-ceramic">Ceramic</label>
+        </div>
+
+        <label for="pot-decorations-toggle">Pot decorations:</label>
+        <div>
+            <input type="checkbox" id="pot-decorations-toggle">
+            <label for="pot-decorations-toggle">Yes / No</label>
+        </div>
+
+        <div id="pot-color-options">
+            <label for="pot-color">Pot color:</label>
+        <div>
+          <input
+            type="radio"
+            id="pot-color-toggle"
+            name="pot-color-toggle"
+            value="yes"
+          />
+          <label for="pot-color-toggle">Yes</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="pot-color-toggle"
+            value="no"
+            name="pot-color-toggle"
+          />
+          <label for="pot-color-toggle">No</label>
+        </div>
+            <div id="pot-color-options-list" style="display: none">
+                <div>
+                  <h2>Choose Style</h2>
+                  <input
+                    type="radio"
+                    id="blue"
+                    name="pot-color"
+                    value="blue"
+                  />
+                  <label for="pot-color-blue">Blue</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="pink"
+                    name="pot-color"
+                    value="pink"
+                  />
+                  <label for="pot-color-pink">Pink</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="green"
+                    name="pot-color"
+                    value="green"
+                  />
+                  <label for="pot-color-green">Green</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="purple"
+                    name="pot-color"
+                    value="purple"
+                  />
+                  <label for="pot-color-purple">Purple</label>
+                </div>
+              </div>
+        </div>
+
+        <label for="plant">Choose your plant:</label>
+        <select id="plant" name="plant" required>
+            <option value="aglaonema">Aglaonema Silver Bay</option>
+            <option value="aloe">Aloe Vera</option>
+            <option value="fern">Boston Fern</option>
+            <option value="cactus">Cactus</option>
+            <option value="monstera">Monstera Deliciosa</option>
+            <option value="peace-lily">Peace Lily</option>
+            <option value="sansevieria">Sansevieria</option>
+        </select>
+
+        <label for="soil">Choose your soil:</label>
+        <div>
+            <input type="radio" id="soil-composted" name="soil" value="composted" required>
+            <label for="soil-composted">Basic composted soil</label>
+        </div>
+        <div>
+            <input type="radio" id="soil-fertilized" name="soil" value="fertilized" required>
+            <label for="soil-fertilized">Premium fertilized soil</label>
+        </div>
+        <div>
+            <input type="radio" id="soil-drainage" name="soil" value="drainage" required>
+            <label for="soil-drainage">Easy drainage soil</label>
+        </div>
+
+        <label for="extras">Choose your extras:</label>
+        <div>
+            <input type="checkbox" id="extra-moss" name="extras" value="moss-pole">
+            <label for="extra-moss">Moss pole</label>
+        </div>
+        <div>
+            <input type="checkbox" id="extra-pebbles" name="extras" value="pebbles">
+            <label for="extra-pebbles">Pebbles</label>
+        </div>
+        <div>
+            <input type="checkbox" id="extra-plants" name="extras" value="mini-plants">
+            <label for="extra-plants">Smaller plants</label>
+        </div>
+        <button id="check-store-button">Check store availability</button>
+    </form>
+    <div id="image-container"></div>
+    <div id="order-info"></div>
+    <script type="module" src="customize.bundle.js"></script>
+    
+</body>
+</html>

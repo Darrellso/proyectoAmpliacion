@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview de Orden</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asume que tienes un archivo styles.css para estilos -->
+</head>
+<body>
+    <div id="order-preview">
+        <h1>Título</h1>
+        <div id="order-images">
+            <img id="plant-image" src="" alt="Planta">
+            <img id="pot-image" src="" alt="Maceta">
+            <img id="soil-image" src="" alt="Suelo">
+            <img id="extras-image" src="" alt="Extras">
+        </div>
+        <div id="order-info">
+            <p>Name: <span id="plant-name"></span></p>
+            <p>Soil: <span id="soil-type"></span></p>
+            <p>Pot: <span id="pot-description"></span></p>
+            <p>Color: <span id="pot-color"></span></p>
+            <p>Extras: <span id="extras-list"></span></p>
+            <p>Price: <span id="price-total"></span></p>
+        </div>
+        <div id="inventory-alert-message"></div>
+    </div>
+    </div>
+    <button id="back-to-customization">Back to customization</button>
+    <button id="order-now" disabled>Order now!</button>
+    </div>
+    <div id="accordions-container">
+
+        <details>
+          <summary>Price breakdown</summary>
+          <div class="panel">
+            <div id="price-breakdown"></div>
+            <div id="total-price"></div>
+        </div>
+        </details>
+      
+        <details>
+          <summary>Inventory Alerts</summary>
+          <p></p>
+        </details>
+      
+        <details>
+          <summary>Plant description</summary>
+          <p></p>
+        </details>
+      
+        <details>
+            <summary>Caring tips</summary>
+            <div class="caring-section">
+                <div id="light-section">
+                    <img src="./Assets/icons/light.svg" alt="Light icon">
+                    <h3>Light</h3>
+                    <p id="light-text"></p>
+                </div>
+                <div id="water-section">
+                    <img src="./Assets/icons/water.svg" alt="Water icon">
+                    <h3>Water</h3>
+                    <p id="water-text"></p>
+                </div>
+                <div id="humidity-section">
+                    <img src="./Assets/icons/humidity.svg" alt="Humidity icon">
+                    <h3>Humidity</h3>
+                    <p id="humidity-text"></p>
+                </div>
+                <div id="temperature-section">
+                    <img src="./Assets/icons/temperature.svg" alt="Temperature icon">
+                    <h3>Temperature</h3>
+                    <p id="temperature-text"></p>
+                </div>
+            </div>
+        </details>
+      
+      </div>
+    <script src="product.bundle.js"></script>
+</body>
+</html>

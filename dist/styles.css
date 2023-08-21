@@ -1,0 +1,180 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    color: #ff5733;
+    margin-bottom: 20px;
+}
+
+.plant-card {
+    background-color: #ffecb3;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #ff7043;
+}
+
+ img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #ff7043;
+}
+p {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.get-plant {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.clear {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+/* Estilos adicionales para resaltar los campos requeridos */
+label.required::after {
+    content: '*';
+    color: #e53935;
+}
+
+.error-message {
+    color: #e53935;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.plant-recommendation {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffd54f;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.plant-recommendation img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    border: 2px solid #1e88e5;
+}
+
+.plant-recommendation p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.custom__body {
+    margin-left: 40%;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#accordions-container details {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#accordions-container details[open] {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#accordions-container details > summary {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+}
+
+#accordions-container details > p {
+    padding: 10px 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#inventory-alert-message {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.stock-in {
+    background-color: #DFF0D8;
+    color: #3C763D;
+}
+
+.stock-limited {
+    background-color: #FCF8E3;
+    color: #8A6D3B;
+}
+
+.stock-out {
+    background-color: #F2DEDE;
+    color: #A94442;
+}

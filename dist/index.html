@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Plant Recommendation</title>
+</head>
+<body>
+    <h1>Plant Recommendation Quiz</h1>
+    <form id="plant-form">
+        <label for="light">Where will you place your plant? *</label>
+        <div>
+            <input type="radio" id="light-indirect" name="light" value="indirect" required>
+            <label for="light-indirect">Inside with some indirect light</label>
+        </div>
+        <div>
+            <input type="radio" id="light-lot-of-indirect" name="light" value="lot_of_indirect" required>
+            <label for="light-lot-of-indirect">Inside with a lot of indirect light</label>
+        </div>
+        <div>
+            <input type="radio" id="light-outside" name="light" value="outside" required>
+            <label for="light-outside">Outside</label>
+        </div>
+
+        <label for="sunlight">Will it receive direct sunlight? *</label>
+        <div>
+            <input type="radio" id="sunlight-direct" name="sunlight" value="direct" required>
+            <label for="sunlight-yes">Yes</label>
+        </div>
+        <div>
+            <input type="radio" id="sunlight-indirect" name="sunlight" value="indirect" required>
+            <label for="sunlight-no">No</label>
+        </div>
+
+        <label for="pets">Do you have pets (cats or dogs)? *</label>
+        <div>
+            <input type="radio" id="pets-yes" name="pets" value="yes" required>
+            <label for="pets-yes">Yes</label>
+        </div>
+        <div>
+            <input type="radio" id="pets-no" name="pets" value="no" required>
+            <label for="pets-no">No</label>
+        </div>
+
+        <label for="watering">Do you tend to overwater or underwater? *</label>
+        <div>
+            <input type="radio" id="watering-over" name="watering" value="overwater" required>
+            <label for="watering-over">Overwater</label>
+        </div>
+        <div>
+            <input type="radio" id="watering-under" name="watering" value="underwater" required>
+            <label for="watering-under">Underwater</label>
+        </div>
+        <div>
+            <input type="radio" id="watering-neither" name="watering" value="neither" required>
+            <label for="watering-neither">Neither / I don't know</label>
+        </div>
+
+        <label for="style">How do you define your style? *</label>
+        <div>
+            <input type="radio" id="style-minimalism" name="style" value="minimalism" required>
+            <label for="style-minimalism">I like minimalism and material colors</label>
+        </div>
+        <div>
+            <input type="radio" id="style-decoration" name="style" value="decoration" required>
+            <label for="style-decoration">I like some decoration and simple colors</label>
+        </div>
+        <div>
+            <input type="radio" id="style-bright" name="style" value="bright" required>
+            <label for="style-bright">I like a lot of decoration and bright colors</label>
+        </div>
+
+        <label for="elements">Do you want to add any extra elements to your plant?</label>
+        <div>
+            <input type="checkbox" id="element-moss" name="elements" value="moss">
+            <label for="element-moss">Moss pole</label>
+        </div>
+        <div>
+            <input type="checkbox" id="element-pebbles" name="elements" value="pebbles">
+            <label for="element-pebbles">Pebbles</label>
+        </div>
+        <div>
+            <input type="checkbox" id="element-plants" name="elements" value="plants">
+            <label for="element-plants">Smaller plants</label>
+        </div>
+
+        <button type="submit" id="get-plant-button">Get your plant!</button>
+        <button type="button" id="clear-button">Clear</button>
+    </form>
+    <div id="result" class="plant-recommendation"></div>
+    <button id="check-store-button">Check Store Availability</button>
+
+    <script type="module" src="./index.bundle.js"></script>
+</body>
+</html>
